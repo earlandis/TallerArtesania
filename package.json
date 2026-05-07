@@ -50,6 +50,7 @@
     "stylelint-scss": "^7.0.0"
   },
   "dependencies": {
+    "gsap": "^3.15.0",
     "swiper": "^12.1.4"
   }
 }

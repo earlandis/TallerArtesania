@@ -1,128 +1,145 @@
+/* =========================
+   HOME LAYOUT
+========================= */
+
 .home {
+  container-type: inline-size;
   min-height: 100dvh;
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: space-between;
-
-  min-height: 100dvh;
-
-  padding: 1.5rem;
-
-  overflow: hidden;
-
   background-image:
-    linear-gradient(
-      rgb(0 0 0 / 0.6),
-      rgb(0 0 0 / 0.6)
-    ),
+    linear-gradient(rgb(0 0 0 / 0.55), rgb(0 0 0 / 0.55)),
     url("../images/charla.jpg");
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
-  transition:
-    background-image 0.6s ease,
-    transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
 
-  container-type: inline-size;
+  min-height: 100dvh;
+
+  overflow: hidden;
+
+  padding: 1.5rem;
+
+  position: relative;
+
+  transition: background-image 0.6s ease;
 
   @supports (display: grid) {
-    @media (min-width: 768px) {
-      display: grid;
 
-      grid-template-columns: 1fr 42rem;
+    align-items: start;
+    display: grid;
 
-      align-items: center;
+    gap: 2rem;
+
+    grid-template-areas:
+      "content"
+      "slider";
+
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   DESKTOP LAYOUT
+========================= */
+
+@supports (display: grid) {
+  @container (min-width: 1024px) {
+    .hero {
+      align-items: end;
 
       gap: 3rem;
+
+      grid-template-areas: "content slider";
+
+      grid-template-columns: 1fr 1.2fr;
     }
   }
+}
 
-  &__overlay {
-    position: absolute;
-    inset: 0;
+/* =========================
+   CONTENT
+========================= */
 
-  background:
-    linear-gradient(
-      180deg,
-      rgb(0 0 0 / 35%) 0%,
-      rgb(0 0 0 / 55%) 100%
-    );
-    z-index: 1;
+.hero__content {
+  grid-area: content;
+  padding-top: 2rem;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  @container (min-width: 768px) {
+    max-width: 42rem;
   }
 
-  &__content {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-
-    padding-top: 2rem;
-
-    @media (min-width: 768px) {
-      max-width: 42rem;
-    }
-  }
-
-  &__eyebrow {
-    margin-bottom: 1rem;
-
-    color: #f4d7a1;
-
-    font-size: 0.9rem;
-    letter-spacing: 0.25rem;
-    text-transform: uppercase;
-  }
-
-  &__title {
-    margin-bottom: 1rem;
-
-    color: #fff;
-
-    font-size: clamp(3rem, 12cqw, 7rem);
-    line-height: 0.9;
-  }
-
-  &__description {
-    max-width: 34rem;
-
-    color: #f3f3f3;
-
-    font-size: clamp(1rem, 3cqw, 1.3rem);
-    line-height: 1.6;
-  }
-
-  &__button {
-    margin-top: 2rem;
-  }
-
-  &__slider-container {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-
-    padding-bottom: 1rem;
-
-    @media (min-width: 768px) {
-      max-width: 100%;
-    }
+  @container (min-width: 1024px) { /* ← faltaba px */
+    margin-bottom: 4rem;
   }
 }
 
 .hero-slider {
-  width: 100%;
-  height: 100%;
-
-  overflow: visible;
+  overflow: visible; // el swiper en sí también
 }
 
-.swiper-wrapper {
-  align-items: stretch;
+.hero__slider-container {
+  grid-area: slider;
+  min-width: 0;
+  overflow: visible; 
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  @container (min-width: 1024px) {
+    margin-bottom: 4rem; /* mismo margen que el contenido */
+
+  }
+}
+
+/* =========================
+   TEXTOS
+========================= */
+
+.hero__button {
+  margin-top: 2rem;
+}
+
+.hero__description {
+  color: #f3f3f3;
+
+  font-size: clamp(1rem, 3cqw, 1.3rem);
+
+  line-height: 1.6;
+
+  max-width: 34rem;
+}
+
+.hero__eyebrow {
+  color: #f4d7a1;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.25rem;
+
+  margin-bottom: 1rem;
+
+  text-transform: uppercase;
+}
+
+.hero__title {
+  color: #fff;
+
+  font-size: clamp(3rem, 8cqw, 7rem);
+
+  line-height: 0.9;
+
+  margin-bottom: 1rem;
 }

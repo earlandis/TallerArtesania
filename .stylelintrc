@@ -3,7 +3,7 @@
   "plugins": ["stylelint-scss", "stylelint-order"],
   "extends": ["stylelint-config-recommended-scss"],
   "rules": {
-
+    "selector-class-pattern": "^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
     "max-nesting-depth": 3,
     "no-descending-specificity": true,
     "declaration-no-important": true,
@@ -14,7 +14,7 @@
     "font-family-no-missing-generic-family-keyword": true,
     "unit-no-unknown": true,
 
-
+    "order/properties-alphabetical-order": true,
     "scss/at-rule-no-unknown": true,
     "scss/selector-no-redundant-nesting-selector": true
   }

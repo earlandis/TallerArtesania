@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="../assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>UOC Boilerplate</title>
+</head>
+
+<body>
+
+  <main class="home">
+
+    <section class="hero">
+
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+
+        <p class="hero__eyebrow">
+          Jornadas 2026
+        </p>
+
+        <h1 class="hero__title" id="hero-title">
+          Cerámica Tradicional
+        </h1>
+
+        <p class="hero__description" id="hero-description">
+          Descubre técnicas ancestrales, talleres y artistas contemporáneos.
+        </p>
+
+        <a href="./speakers.html" class="btn btn-primary hero__button">
+          Ver ponentes
+        </a>
+
+      </div>
+
+      <div class="hero__slider-container">
+
+        <div class="swiper hero-slider">
+
+          <div class="swiper-wrapper">
+
+            <article
+              class="swiper-slide artisan-card"
+              data-title="Cerámica Tradicional"
+              data-description="Descubre técnicas ancestrales, talleres y artistas contemporáneos."
+              data-image="/assets/images/taller.jpg"
+            >
+              <img
+                class="artisan-card__image"
+                src="../assets/images/taller.jpg"
+                alt="Cerámica"
+              >
+
+              <div class="artisan-card__content">
+                <h2 class="artisan-card__title">
+                  Cerámica
+                </h2>
+              </div>
+            </article>
+
+            <article
+              class="swiper-slide artisan-card"
+              data-title="Textil Artesanal"
+              data-description="Tejidos naturales y procesos manuales sostenibles."
+              data-image="/assets/images/charla.jpg"
+            >
+              <img
+                class="artisan-card__image"
+                src="../assets/images/charla.jpg"
+                alt="Textil"
+              >
+
+              <div class="artisan-card__content">
+                <h2 class="artisan-card__title">
+                  Textil
+                </h2>
+              </div>
+            </article>
+
+            <article
+              class="swiper-slide artisan-card"
+              data-title="Madera y Diseño"
+              data-description="Creación artesanal contemporánea con materiales nobles."
+              data-image="/assets/images/experiencia.jpg"
+            >
+              <img
+                class="artisan-card__image"
+                src="../assets/images/experiencia.jpg"
+                alt="Madera"
+              >
+
+              <div class="artisan-card__content">
+                <h2 class="artisan-card__title">
+                  Madera
+                </h2>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+  <script type="module" src="../assets/scripts/main.js"></script>
+</body>
+</html>

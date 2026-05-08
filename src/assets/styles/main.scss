@@ -1,9 +1,16 @@
+@use "bootstrap/scss/bootstrap" with (
+  $navbar-padding-y: 0,
+  $navbar-brand-font-size: 1.2rem
+);
+
 @use "variables";
 @use "mixins";
 
 @use "base/base";
 
 @use "components/cards";
+@use "components/navbar";
+
 
 @use "layouts/home";
 @use "layouts/speakers";

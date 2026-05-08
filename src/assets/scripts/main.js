@@ -20,6 +20,26 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  const navbar = document.querySelector(".navbar");
+
+  if (navbar) {
+    // En páginas con scroll: añade clase al bajar
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("navbar--scrolled", window.scrollY > 10);
+    }, { passive: true });
+
+    // En home (sin scroll): activa el fondo cuando se abre el menú móvil
+    const navCollapse = document.getElementById("navMenu");
+    if (navCollapse) {
+      navCollapse.addEventListener("show.bs.collapse", () => {
+        navbar.classList.add("navbar--scrolled");
+      });
+      navCollapse.addEventListener("hide.bs.collapse", () => {
+        if (window.scrollY <= 10) navbar.classList.remove("navbar--scrolled");
+      });
+    }
+  }
+
   let isAnimating = false;
 
 function setActiveSlide(slide) {

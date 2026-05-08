@@ -1,3 +1,39 @@
-/**
- * Write any other scss rule
- */
+// =========================
+// COLORES
+// =========================
+$color-primary: #f4d7a1;
+$color-text-light: #f3f3f3;
+$color-white: #fff;
+$color-overlay: rgb(0 0 0 / 0.55);
+
+// Sobreescribimos variables de Bootstrap ANTES de importarlo
+$navbar-padding-y: 1rem;
+$navbar-brand-font-size: 1.2rem;
+
+// =========================
+// TIPOGRAFÍA
+// =========================
+$font-size-eyebrow: 0.9rem;
+$letter-spacing-eyebrow: 0.25rem;
+$font-size-description-min: 1rem;
+$font-size-description-max: 1.3rem;
+$font-size-title-min: 3rem;
+$font-size-title-max: 7rem;
+// =========================
+// ESPACIADO
+// =========================
+$spacing-section: 4rem;
+$border-radius-card: 1.25rem;
+$spacing-hero-padding: 1.5rem;
+$spacing-hero-gap-sm: 2rem;
+$spacing-hero-gap-lg: 3rem;
+$spacing-hero-bottom: 4rem;
+$spacing-content-max-width: 42rem;
+$spacing-description-max-width: 34rem;
+$border-radius-card: 1.25rem;
+
+// =========================
+// BREAKPOINTS (referencia, no para usar directamente)
+// =========================
+$bp-md: 768px;
+$bp-lg: 1024px;

@@ -1,145 +1,117 @@
-/* =========================
-   HOME LAYOUT
-========================= */
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// =========================
+// HOME LAYOUT
+// =========================
 
 .home {
   container-type: inline-size;
   min-height: 100dvh;
 }
 
-/* =========================
-   HERO
-========================= */
+// =========================
+// HERO
+// =========================
 
 .hero {
-  background-image:
-    linear-gradient(rgb(0 0 0 / 0.55), rgb(0 0 0 / 0.55)),
-    url("../images/charla.jpg");
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  display: flex;
-  flex-direction: column;
-
+  @include bg-overlay("../images/charla.jpg");
+  @include hero-grid(
+    $areas: "content" "slider",
+    $columns: 1fr,
+    $align: start
+  );
+  gap: $spacing-hero-gap-sm;
   min-height: 100dvh;
-
   overflow: hidden;
-
-  padding: 1.5rem;
-
+  padding: 0 $spacing-hero-padding $spacing-hero-padding;
   position: relative;
-
   transition: background-image 0.6s ease;
-
-  @supports (display: grid) {
-
-    align-items: start;
-    display: grid;
-
-    gap: 2rem;
-
-    grid-template-areas:
-      "content"
-      "slider";
-
-    grid-template-columns: 1fr;
-  }
 }
 
-/* =========================
-   DESKTOP LAYOUT
-========================= */
+// =========================
+// DESKTOP LAYOUT
+// =========================
 
 @supports (display: grid) {
   @container (min-width: 1024px) {
     .hero {
       align-items: end;
-
-      gap: 3rem;
-
+      gap: $spacing-hero-gap-lg;
       grid-template-areas: "content slider";
-
       grid-template-columns: 1fr 1.2fr;
     }
   }
 }
 
-/* =========================
-   CONTENT
-========================= */
+// =========================
+// CONTENT
+// =========================
 
 .hero__content {
   grid-area: content;
-  padding-top: 2rem;
+  padding-top: $spacing-hero-gap-sm;
   position: relative;
   width: 100%;
   z-index: 2;
 
   @container (min-width: 768px) {
-    max-width: 42rem;
+    max-width: $spacing-content-max-width;
   }
 
-  @container (min-width: 1024px) { /* ← faltaba px */
-    margin-bottom: 4rem;
+  @container (min-width: 1024px) {
+    margin-bottom: $spacing-hero-bottom;
   }
 }
 
+// =========================
+// SLIDER
+// =========================
+
 .hero-slider {
-  overflow: visible; // el swiper en sí también
+  overflow: visible;
 }
 
 .hero__slider-container {
   grid-area: slider;
   min-width: 0;
-  overflow: visible; 
+  overflow: visible;
   position: relative;
   width: 100%;
   z-index: 2;
 
   @container (min-width: 1024px) {
-    margin-bottom: 4rem; /* mismo margen que el contenido */
-
+    margin-bottom: $spacing-hero-bottom;
   }
 }
 
-/* =========================
-   TEXTOS
-========================= */
+// =========================
+// TEXTOS
+// =========================
 
 .hero__button {
-  margin-top: 2rem;
+  margin-top: $spacing-hero-gap-sm;
 }
 
 .hero__description {
-  color: #f3f3f3;
+  @include fluid-type($font-size-description-min, 3cqw, $font-size-description-max);
 
-  font-size: clamp(1rem, 3cqw, 1.3rem);
-
+  color: $color-text-light;
   line-height: 1.6;
-
-  max-width: 34rem;
+  max-width: $spacing-description-max-width;
 }
 
 .hero__eyebrow {
-  color: #f4d7a1;
+  @include eyebrow;
 
-  font-size: 0.9rem;
-
-  letter-spacing: 0.25rem;
-
+  color: $color-primary;
   margin-bottom: 1rem;
-
-  text-transform: uppercase;
 }
 
 .hero__title {
-  color: #fff;
+  @include fluid-type($font-size-title-min, 8cqw, $font-size-title-max);
 
-  font-size: clamp(3rem, 8cqw, 7rem);
-
+  color: $color-white;
   line-height: 0.9;
-
   margin-bottom: 1rem;
 }

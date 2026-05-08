@@ -1,3 +1,36 @@
-/**
- * Write any other scss rule
- */
+@use "variables" as *;
+
+// Fondo con overlay oscuro
+@mixin bg-overlay($image, $overlay: $color-overlay) {
+  background-image:
+    linear-gradient($overlay, $overlay),
+    url($image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// Grid hero — fallback flex + grid con @supports
+@mixin hero-grid($areas, $columns, $align: start) {
+  display: flex;
+  flex-direction: column;
+
+  @supports (display: grid) {
+    align-items: $align;
+    display: grid;
+    grid-template-areas: $areas;
+    grid-template-columns: $columns;
+  }
+}
+
+// Eyebrow label
+@mixin eyebrow {
+  font-size: $font-size-eyebrow;
+  letter-spacing: $letter-spacing-eyebrow;
+  text-transform: uppercase;
+}
+
+// Fluid font size con clamp
+@mixin fluid-type($min, $fluid, $max) {
+  font-size: clamp($min, $fluid, $max);
+}

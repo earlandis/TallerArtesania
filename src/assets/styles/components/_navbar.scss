@@ -1,0 +1,116 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// =========================
+// NAVBAR
+// =========================
+
+$navbar-height: 64px;
+
+:root {
+  --navbar-height: #{$navbar-height};
+}
+
+.navbar {
+  background-color: transparent;
+  left: 0;
+  padding: 0 $spacing-hero-padding;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease,
+    box-shadow 0.3s ease;
+  z-index: 100;
+
+  // Scrolled / opaque state (toggle via JS if needed)
+  &.navbar--scrolled,
+  &:focus-within {
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.65);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .container-fluid {
+    height: $navbar-height;
+    padding: 0;
+  }
+}
+
+// Brand / logo
+.navbar-brand {
+  color: $color-white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: $color-primary;
+  }
+}
+
+// Nav links
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.75rem;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus,
+  &.active {
+    color: $color-white;
+  }
+}
+
+// Toggler (mobile)
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  padding: 0.35rem 0.55rem;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.4);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.85)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+}
+
+// Mobile collapse panel
+.navbar-collapse {
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 0 0 8px 8px;
+  margin: 0 (-$spacing-hero-padding);
+  padding: 0.5rem $spacing-hero-padding 1rem;
+
+  @media (min-width: 992px) {
+    backdrop-filter: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// =========================
+// HOME — prevent scroll, offset hero
+// =========================
+
+.home-page {
+  overflow: hidden;
+}
+
+// El hero ya ocupa 100dvh, solo compensamos el padding-top interno
+// para que el contenido no quede bajo el navbar
+.home-page .hero__content {
+  padding-top: calc(#{$navbar-height} + 1rem);
+}

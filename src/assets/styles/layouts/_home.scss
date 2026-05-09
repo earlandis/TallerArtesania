@@ -1,52 +1,48 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-// =========================
-// HOME LAYOUT
-// =========================
-
 .home {
   container-type: inline-size;
+  display: flex;
+  flex-direction: column;
   min-height: 100dvh;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-areas:
+      "hero"
+      "bar";
+    grid-template-rows: 1fr auto;
+  }
 }
 
-// =========================
-// HERO
-// =========================
-
 .hero {
-  @include bg-overlay("../images/charla.jpg");
+  @include bg-overlay("../images/artesania.jpg");
   @include hero-grid(
     $areas: "content" "slider",
     $columns: 1fr,
     $align: start
   );
   gap: $spacing-hero-gap-sm;
-  min-height: 100dvh;
+  grid-area: hero;
+  min-height: calc(100svh - 3rem);
   overflow: hidden;
-  padding: 0 $spacing-hero-padding $spacing-hero-padding;
+  padding: 0 $spacing-hero-padding-sm $spacing-hero-padding-sm;
   position: relative;
   transition: background-image 0.6s ease;
 }
 
-// =========================
-// DESKTOP LAYOUT
-// =========================
-
 @supports (display: grid) {
-  @container (min-width: 1024px) {
+  @container (min-width: #{$bp-lg}) {
     .hero {
       align-items: end;
       gap: $spacing-hero-gap-lg;
       grid-template-areas: "content slider";
       grid-template-columns: 1fr 1.2fr;
+      padding: 0 $spacing-hero-padding-lm $spacing-hero-padding-lm;
     }
   }
 }
-
-// =========================
-// CONTENT
-// =========================
 
 .hero__content {
   grid-area: content;
@@ -55,18 +51,15 @@
   width: 100%;
   z-index: 2;
 
-  @container (min-width: 768px) {
+  @container (min-width: #{$bp-md}) {
     max-width: $spacing-content-max-width;
   }
 
-  @container (min-width: 1024px) {
+  @container (min-width: #{$bp-lg}) {
     margin-bottom: $spacing-hero-bottom;
+    margin-left: $spacing-hero-left;
   }
 }
-
-// =========================
-// SLIDER
-// =========================
 
 .hero-slider {
   overflow: visible;
@@ -74,23 +67,54 @@
 
 .hero__slider-container {
   grid-area: slider;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 0%,
+    black 100%
+  );
   min-width: 0;
   overflow: visible;
   position: relative;
   width: 100%;
   z-index: 2;
 
-  @container (min-width: 1024px) {
+  @container (min-width: #{$bp-lg}) {
     margin-bottom: $spacing-hero-bottom;
+    margin-left: $spacing-hero-left;
   }
 }
 
-// =========================
-// TEXTOS
-// =========================
+.hero__eyebrow-group {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
 
-.hero__button {
-  margin-top: $spacing-hero-gap-sm;
+.hero__eyebrow-line {
+  background-color: $color-primary;
+  display: block;
+  flex-shrink: 0;
+  height: 2px;
+  width: 3rem;
+}
+
+.hero__eyebrow {
+  @include eyebrow;
+
+  color: $color-primary;
+  margin: 0;
+}
+
+.hero__title {
+  @include fluid-type($font-size-title-min, 8cqw, $font-size-title-max);
+
+  color: $color-white;
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 0.9;
+  margin-bottom: 1rem;
 }
 
 .hero__description {
@@ -101,17 +125,62 @@
   max-width: $spacing-description-max-width;
 }
 
-.hero__eyebrow {
-  @include eyebrow;
-
+.hero__button {
+  border: 1.5px solid $color-primary;
   color: $color-primary;
-  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  margin-top: $spacing-hero-button-top;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+    color: #1a1a1a;
+  }
 }
 
-.hero__title {
-  @include fluid-type($font-size-title-min, 8cqw, $font-size-title-max);
+// =========================
+// POSTER BAR
+// =========================
 
-  color: $color-white;
-  line-height: 0.9;
-  margin-bottom: 1rem;
+.home__poster-bar {
+  align-items: center;
+  background-color: #0e0e0e;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 1.5rem;
+  grid-area: bar;
+  justify-content: center;
+  padding: 1rem $spacing-hero-padding-sm;
+
+  @container (max-width: #{$bp-md}) {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem $spacing-hero-padding-sm;
+  }
+}
+
+.home__poster-bar-item {
+  color: rgba(255, 255, 255, 0.45);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  @container (max-width: #{$bp-md}) {
+    font-size: 0.7rem;   // ← más pequeño en móvil
+    letter-spacing: 0.15em;
+  }
+}
+
+.home__poster-bar-separator {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+
+  @container (max-width: #{$bp-md}) {
+    display: none;
+  }
 }

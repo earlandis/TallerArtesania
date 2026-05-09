@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="../assets/styles/main.scss" />
-    <!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="../assets/styles/main.scss" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <title>UOC Boilerplate</title>
 </head>
 
 <body class="home-page">
 
-    <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+  <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
     <div class="container-fluid">
- 
-      <!-- Brand -->
       <a class="navbar-brand" href="./home.html">
-        Jornadas&nbsp;<span style="color: var(--color-primary, #c0764a);">2026</span>
+        Ayuntamiento&nbsp;<span class="navbar-brand__highlight">Valencia</span>
       </a>
- 
-      <!-- Toggler mobile -->
       <button
         class="navbar-toggler"
         type="button"
@@ -30,8 +28,6 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
- 
-      <!-- Links -->
       <div class="collapse navbar-collapse justify-content-end" id="navMenu">
         <ul class="navbar-nav gap-1">
           <li class="nav-item">
@@ -41,152 +37,121 @@
             <a class="nav-link" href="./speakers.html">Ponentes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./article.html">Articulo</a>
+            <a class="nav-link" href="./article.html">Artículo</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./free.html">Free</a>
           </li>
         </ul>
       </div>
- 
     </div>
   </nav>
 
   <main class="home">
 
     <section class="hero">
-
       <div class="hero__content">
-
-        <p class="hero__eyebrow">
-          Jornadas 2026
-        </p>
-
+        <div class="hero__eyebrow-group">
+          <span class="hero__eyebrow-line"></span>
+          <p class="hero__eyebrow">Jornadas 2026</p>
+        </div>
         <h1 class="hero__title" id="hero-title">
-          Cerámica Tradicional
+          Artesanía contemporánea
         </h1>
-
         <p class="hero__description" id="hero-description">
-          Descubre técnicas ancestrales, talleres y artistas contemporáneos.
+          Encuentros entre diseñadores y artesanos para explorar nuevas formas de creación local.
         </p>
-
-        <a href="./speakers.html" class="btn btn-primary hero__button">
-          Ver ponentes
+        <a href="./speakers.html" class="btn hero__button" id="hero-button">
+          Explorar programa
         </a>
-
       </div>
 
       <div class="hero__slider-container">
-
         <div class="swiper hero-slider">
-
           <div class="swiper-wrapper">
-
             <article
               class="swiper-slide artisan-card"
-              data-title="Cerámica Tradicional"
-              data-description="Descubre técnicas ancestrales, talleres y artistas contemporáneos."
-              data-image="/assets/images/taller.jpg"
+              data-title="Cerámica tradicional"
+              data-description="Aprende técnicas ancestrales de torno, esmaltado y cocción junto a artesanos locales."
+              data-image="/assets/images/Cerámica.jpg"
+              data-button-text="Reservar taller"
+              data-button-href="./talleres.html"
             >
-              <img
-                class="artisan-card__image"
-                src="../assets/images/taller.jpg"
-                alt="Cerámica"
-              >
-
+              <img class="artisan-card__image" src="../assets/images/ceramica.jpg" alt="Cerámica">
               <div class="artisan-card__content">
-                <h2 class="artisan-card__title">
-                  Cerámica
-                </h2>
+                <h2 class="artisan-card__title">Cerámica</h2>
               </div>
             </article>
-
             <article
               class="swiper-slide artisan-card"
-              data-title="Textil Artesanal"
-              data-description="Tejidos naturales y procesos manuales sostenibles."
-              data-image="/assets/images/charla.jpg"
+              data-title="Textil artesanal"
+              data-description="Charlas y demostraciones sobre tintes naturales, telares y procesos textiles sostenibles."
+              data-image="/assets/images/Textil.jpg"
+              data-button-text="Descubrir técnicas"
+              data-button-href="./textil.html"
             >
-              <img
-                class="artisan-card__image"
-                src="../assets/images/charla.jpg"
-                alt="Textil"
-              >
-
+              <img class="artisan-card__image" src="../assets/images/Textil.jpg" alt="Textil">
               <div class="artisan-card__content">
-                <h2 class="artisan-card__title">
-                  Textil
-                </h2>
+                <h2 class="artisan-card__title">Textil</h2>
               </div>
             </article>
-
             <article
               class="swiper-slide artisan-card"
-              data-title="Madera y Diseño"
-              data-description="Creación artesanal contemporánea con materiales nobles."
-              data-image="/assets/images/experiencia.jpg"
+              data-title="Madera y diseño"
+              data-description="Descubre cómo la artesanía contemporánea transforma materiales nobles en piezas únicas."
+              data-image="/assets/images/Madera.jpg"
+              data-button-text="Ver exposición"
+              data-button-href="./experiencia.html"
             >
-              <img
-                class="artisan-card__image"
-                src="../assets/images/experiencia.jpg"
-                alt="Madera"
-              >
-
+              <img class="artisan-card__image" src="../assets/images/Madera.jpg" alt="Madera">
               <div class="artisan-card__content">
-                <h2 class="artisan-card__title">
-                  Madera
-                </h2>
+                <h2 class="artisan-card__title">Madera</h2>
               </div>
             </article>
-
             <article
               class="swiper-slide artisan-card"
-              data-title="Textil Artesanal"
-              data-description="Tejidos naturales y procesos manuales sostenibles."
-              data-image="/assets/images/charla.jpg"
+              data-title="Forja tradicional"
+              data-description="Exhibiciones en vivo de técnicas de herrería artística y trabajo manual del metal."
+              data-image="/assets/images/forja.jpg"
+              data-button-text="Ver demostración"
+              data-button-href="./charla.html"
             >
-              <img
-                class="artisan-card__image"
-                src="../assets/images/charla.jpg"
-                alt="Textil"
-              >
-
+              <img class="artisan-card__image" src="../assets/images/forja.jpg" alt="Forja">
               <div class="artisan-card__content">
-                <h2 class="artisan-card__title">
-                  Textil
-                </h2>
+                <h2 class="artisan-card__title">Forja</h2>
               </div>
             </article>
-
             <article
               class="swiper-slide artisan-card"
-              data-title="Madera y Diseño"
-              data-description="Creación artesanal contemporánea con materiales nobles."
-              data-image="/assets/images/experiencia.jpg"
+              data-title="Cestería mediterránea"
+              data-description="Talleres participativos sobre fibras vegetales, trenzado y tradición artesanal valenciana."
+              data-image="/assets/images/cesteria.jpg"
+              data-button-text="Participar"
+              data-button-href="./experiencia.html"
             >
-              <img
-                class="artisan-card__image"
-                src="../assets/images/experiencia.jpg"
-                alt="Madera"
-              >
-
+              <img class="artisan-card__image" src="../assets/images/cesteria.jpg" alt="Cestería">
               <div class="artisan-card__content">
-                <h2 class="artisan-card__title">
-                  Madera
-                </h2>
+                <h2 class="artisan-card__title">Cestería</h2>
               </div>
             </article>
-
-
           </div>
-
+          <div class="swiper-pagination"></div>
+          <button class="swiper-button-prev"></button>
+          <button class="swiper-button-next"></button>
         </div>
-
       </div>
-
     </section>
 
+    <div class="home__poster-bar">
+      <span class="home__poster-bar-item">12 — 14 Junio 2026</span>
+      <span class="home__poster-bar-separator">·</span>
+      <span class="home__poster-bar-item">València</span>
+      <span class="home__poster-bar-separator">·</span>
+      <span class="home__poster-bar-item">Entrada libre</span>
+    </div>
+
   </main>
+
   <script type="module" src="../assets/scripts/main.js"></script>
 </body>
 </html>

@@ -1,20 +1,15 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-// =========================
-// NAVBAR
-// =========================
-
-$navbar-height: 64px;
-
 :root {
   --navbar-height: #{$navbar-height};
 }
 
 .navbar {
   background-color: transparent;
+  container-type: inline-size;  // ← necesario para container queries
   left: 0;
-  padding: 0 $spacing-hero-padding;
+  padding: 0 $spacing-hero-padding-sm;
   position: fixed;
   right: 0;
   top: 0;
@@ -24,7 +19,6 @@ $navbar-height: 64px;
     box-shadow 0.3s ease;
   z-index: 100;
 
-  // Scrolled / opaque state (toggle via JS if needed)
   &.navbar--scrolled,
   &:focus-within {
     backdrop-filter: blur(12px);
@@ -38,14 +32,16 @@ $navbar-height: 64px;
   }
 }
 
-// Brand / logo
 .navbar-brand {
   color: $color-white;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 0.75rem;          // ← móvil: más pequeño
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: color 0.2s ease;
+
+  @container (min-width: #{$bp-md}) {
+    font-size: 1rem;           // ← desktop: tamaño normal
+  }
 
   &:hover,
   &:focus {
@@ -53,7 +49,10 @@ $navbar-height: 64px;
   }
 }
 
-// Nav links
+.navbar-brand__highlight {
+  color: $color-primary;
+}
+
 .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.85rem;
@@ -70,7 +69,6 @@ $navbar-height: 64px;
   }
 }
 
-// Toggler (mobile)
 .navbar-toggler {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 4px;
@@ -85,15 +83,14 @@ $navbar-height: 64px;
   }
 }
 
-// Mobile collapse panel
 .navbar-collapse {
   backdrop-filter: blur(12px);
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.95);
   border-radius: 0 0 8px 8px;
-  margin: 0 (-$spacing-hero-padding);
-  padding: 0.5rem $spacing-hero-padding 1rem;
+  margin: 0 (-$spacing-hero-padding-sm);
+  padding: 0.5rem $spacing-hero-padding-sm 1rem;
 
-  @media (min-width: 992px) {
+  @container (min-width: 992px) {  // ← media → container
     backdrop-filter: none;
     background-color: transparent;
     margin: 0;
@@ -101,16 +98,6 @@ $navbar-height: 64px;
   }
 }
 
-// =========================
-// HOME — prevent scroll, offset hero
-// =========================
-
 .home-page {
-  overflow: hidden;
-}
-
-// El hero ya ocupa 100dvh, solo compensamos el padding-top interno
-// para que el contenido no quede bajo el navbar
-.home-page .hero__content {
-  padding-top: calc(#{$navbar-height} + 1rem);
+  min-height: 100svh;
 }

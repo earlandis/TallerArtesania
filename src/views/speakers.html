@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/main.scss" />
+  <!-- do not remove this line! -->
+  <title>UOC Boilerplate</title>
+</head>
+
+<body class="speakers-page">
+
+  <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="./home.html">
+        Ayuntamiento&nbsp;<span class="navbar-brand__highlight">Valencia</span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Abrir menú"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="./home.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./speakers.html">Ponentes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./article.html">Artículo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./free.html">Free</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <main class="speakers">
+
+    <header class="speakers__header">
+      <div class="speakers__header-inner">
+        <div class="speakers__eyebrow-group">
+          <span class="speakers__eyebrow-line"></span>
+          <p class="speakers__eyebrow">Jornadas 2026</p>
+        </div>
+        <h1 class="speakers__title">Ponentes</h1>
+        <p class="speakers__subtitle">
+          Artesanos, diseñadores y pensadores que dan forma al futuro de los oficios tradicionales.
+        </p>
+      </div>
+      <div class="speakers__header-count">
+        <span class="speakers__count-number">08</span>
+        <span class="speakers__count-label">Ponentes</span>
+      </div>
+    </header>
+
+    <section class="speakers__grid" aria-label="Lista de ponentes">
+
+      <article class="speaker-card">
+        <div class="speaker-card__image-wrap">
+          <img src="../assets/images/maria.jpg" alt="María Lloret" class="speaker-card__image" />
+          <div class="speaker-card__overlay">
+            <p class="speaker-card__bio">
+              Ceramista valenciana con más de 20 años recuperando técnicas de barro negro. Colabora con museos etnológicos de toda España.
+            </p>
+          </div>
+        </div>
+        <div class="speaker-card__info">
+          <div class="speaker-card__meta">
+            <span class="speaker-card__index">01</span>
+          <span class="badge speaker-card__badge">Cerámica</span>
+          </div>
+          <h2 class="speaker-card__name">María Lloret</h2>
+          <p class="speaker-card__role">Ceramista · Valencia</p>
+        </div>
+      </article>
+
+      <article class="speaker-card">
+        <div class="speaker-card__image-wrap">
+          <img src="../assets/images/tomas.jpg" alt="Tomás Reig" class="speaker-card__image" />
+          <div class="speaker-card__overlay">
+            <p class="speaker-card__bio">
+              Tejedor especializado en lino y esparto. Fundador del colectivo Fibra Viva, que une a artesanos textiles del mediterráneo.
+            </p>
+          </div>
+        </div>
+        <div class="speaker-card__info">
+          <div class="speaker-card__meta">
+            <span class="speaker-card__index">02</span>
+            <span class="badge speaker-card__badge">Textil</span>
+          </div>
+          <h2 class="speaker-card__name">Tomás Reig</h2>
+          <p class="speaker-card__role">Tejedor · Murcia</p>
+        </div>
+      </article>
+
+      <article class="speaker-card">
+        <div class="speaker-card__image-wrap">
+          <img src="../assets/images/laia.jpg" alt="Laia Puig" class="speaker-card__image" />
+          <div class="speaker-card__overlay">
+            <p class="speaker-card__bio">
+              Diseñadora industrial reconvertida al trabajo en madera. Sus piezas combinan torno y CNC en diálogo con la tradición ebanista catalana.
+            </p>
+          </div>
+        </div>
+        <div class="speaker-card__info">
+          <div class="speaker-card__meta">
+            <span class="speaker-card__index">03</span>
+            <span class="badge speaker-card__badge">Madera</span>
+          </div>
+          <h2 class="speaker-card__name">Laia Puig</h2>
+          <p class="speaker-card__role">Diseñadora · Barcelona</p>
+        </div>
+      </article>
+
+      <article class="speaker-card">
+        <div class="speaker-card__image-wrap">
+          <img src="../assets/images/andres.jpg" alt="Andrés Molina" class="speaker-card__image" />
+          <div class="speaker-card__overlay">
+            <p class="speaker-card__bio">
+              Maestro alfarero de Úbeda. Trabaja con arcillas locales y hornos de leña para preservar la cerámica verde andaluza.
+            </p>
+          </div>
+        </div>
+        <div class="speaker-card__info">
+          <div class="speaker-card__meta">
+            <span class="speaker-card__index">04</span>
+            <span class="badge speaker-card__badge">Cerámica</span>
+          </div>
+          <h2 class="speaker-card__name">Andrés Molina</h2>
+          <p class="speaker-card__role">Alfarero · Úbeda</p>
+        </div>
+      </article>
+
+      <article class="speaker-card">
+        <div class="speaker-card__image-wrap">
+          <img src="../assets/images/neus.jpg" alt="Neus Ferrer" class="speaker-card__image" />
+          <div class="speaker-card__overlay">
+            <p class="speaker-card__bio">
+              Investigadora y comisaria de exposiciones sobre oficios en extinción. Autora de "Manos que quedan" (2023).
+            </p>
+          </div>
+        </div>
+        <div class="speaker-card__info">
+          <div class="speaker-card__meta">
+            <span class="speaker-card__index">05</span>
+            <span class="badge speaker-card__badge">Investigación</span>
+          </div>
+          <h2 class="speaker-card__name">Neus Ferrer</h2>
+          <p class="speaker-card__role">Investigadora · Girona</p>
+        </div>
+      </article>
+
+      <article class="speaker-card">
+        <div class="speaker-card__image-wrap">
+          <img src="../assets/images/javier.jpg" alt="Javier Ortega" class="speaker-card__image" />
+          <div class="speaker-card__overlay">
+            <p class="speaker-card__bio">
+              Cestero y activista cultural. Lidera talleres itinerantes de mimbre y junco en comunidades rurales de Castilla.
+            </p>
+          </div>
+        </div>
+        <div class="speaker-card__info">
+          <div class="speaker-card__meta">
+            <span class="speaker-card__index">06</span>
+            <span class="badge speaker-card__badge">Cestería</span>
+          </div>
+          <h2 class="speaker-card__name">Javier Ortega</h2>
+          <p class="speaker-card__role">Cestero · Salamanca</p>
+        </div>
+      </article>
+
+      <article class="speaker-card">
+        <div class="speaker-card__image-wrap">
+          <img src="../assets/images/carme.jpg" alt="Carme Vidal" class="speaker-card__image" />
+          <div class="speaker-card__overlay">
+            <p class="speaker-card__bio">
+              Encajera y formadora. Recupera el encaje de bolillos mediterráneo a través de talleres intergeneracionales.
+            </p>
+          </div>
+        </div>
+        <div class="speaker-card__info">
+          <div class="speaker-card__meta">
+            <span class="speaker-card__index">07</span>
+            <span class="badge speaker-card__badge">Encaje</span>
+          </div>
+          <h2 class="speaker-card__name">Carme Vidal</h2>
+          <p class="speaker-card__role">Encajera · Tarragona</p>
+        </div>
+      </article>
+
+      <article class="speaker-card">
+        <div class="speaker-card__image-wrap">
+          <img src="../assets/images/iñaki.jpg" alt="Iñaki Arrese" class="speaker-card__image" />
+          <div class="speaker-card__overlay">
+            <p class="speaker-card__bio">
+              Herrero artístico que fusiona forja tradicional vasca con diseño contemporáneo de mobiliario y escultura.
+            </p>
+          </div>
+        </div>
+        <div class="speaker-card__info">
+          <div class="speaker-card__meta">
+            <span class="speaker-card__index">08</span>
+            <span class="badge speaker-card__badge">Forja</span>
+          </div>
+          <h2 class="speaker-card__name">Iñaki Arrese</h2>
+          <p class="speaker-card__role">Herrero · Bilbao</p>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <script type="module" src="../assets/scripts/main.js"></script>
+</body>
+</html>

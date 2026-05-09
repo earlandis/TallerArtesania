@@ -4,11 +4,7 @@
 $color-primary: #f4d7a1;
 $color-text-light: #f3f3f3;
 $color-white: #fff;
-$color-overlay: rgb(0 0 0 / 0.55);
-
-// Sobreescribimos variables de Bootstrap ANTES de importarlo
-$navbar-padding-y: 1rem;
-$navbar-brand-font-size: 1.2rem;
+$color-overlay: rgb(0 0 0 / 0.35);
 
 // =========================
 // TIPOGRAFÍA
@@ -19,21 +15,32 @@ $font-size-description-min: 1rem;
 $font-size-description-max: 1.3rem;
 $font-size-title-min: 3rem;
 $font-size-title-max: 7rem;
+
 // =========================
 // ESPACIADO
 // =========================
 $spacing-section: 4rem;
 $border-radius-card: 1.25rem;
-$spacing-hero-padding: 1.5rem;
-$spacing-hero-gap-sm: 2rem;
-$spacing-hero-gap-lg: 3rem;
-$spacing-hero-bottom: 4rem;
+$spacing-hero-padding-sm: 1.5rem;
+$spacing-hero-padding-lm: 3rem;
+$spacing-hero-gap-sm: 4rem;
+$spacing-hero-gap-lg: 5rem;
+$spacing-hero-bottom: 5rem;
+$spacing-hero-button-top: 1rem;
+$spacing-hero-left: 2rem;
 $spacing-content-max-width: 42rem;
 $spacing-description-max-width: 34rem;
 $border-radius-card: 1.25rem;
+$navbar-height: 64px;
 
 // =========================
-// BREAKPOINTS (referencia, no para usar directamente)
+// BREAKPOINTS
 // =========================
 $bp-md: 768px;
 $bp-lg: 1024px;
+
+// =========================
+// ARTISAN CARDS
+// =========================
+$font-size-card-title-min: 1.2rem;   
+$font-size-card-title-max: 1.5rem;    

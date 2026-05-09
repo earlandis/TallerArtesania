@@ -1,3 +1,236 @@
-/**
- * Write any other scss rule
- */
+@use "../variables" as *;
+@use "../mixins" as *;
+
+@layer speakers-base, speakers-components;
+
+@layer speakers-base {
+
+  .speakers-page {
+    background-color: #0e0e0e;
+    min-height: 100dvh;
+  }
+
+  .speakers {
+    padding-bottom: 6rem;
+  }
+
+  .speakers__header {
+    align-items: flex-end;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: calc(64px + 4rem) $spacing-hero-padding-sm 3rem;
+  }
+
+  .speakers__header-inner {
+    flex: 1;
+    max-width: 36rem;
+  }
+
+  .speakers__eyebrow-group {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .speakers__eyebrow-line {
+    background-color: $color-primary;
+    display: block;
+    height: 2px;
+    width: 2rem;
+  }
+
+  .speakers__eyebrow {
+    @include eyebrow;
+    color: $color-primary;
+    margin: 0;
+  }
+
+  .speakers__subtitle {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 28rem;
+  }
+
+  .speakers__header-count {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 0.15rem;
+    padding-bottom: 0.25rem;
+
+    @media (max-width: #{$bp-md}) {
+      display: none;
+    }
+  }
+
+  .speakers__count-number {
+    color: $color-white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  .speakers__count-label {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .speakers__grid {
+    container-name: speakers-grid;
+    container-type: inline-size;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 $spacing-hero-padding-sm;
+  }
+
+} // end @layer speakers-base
+
+@layer speakers-components {
+
+  .speaker-card {
+    cursor: pointer;
+    flex: 1 1 calc(50% - 1px);
+    min-width: 240px;
+    overflow: hidden;
+    position: relative;
+
+    @container speakers-grid (min-width: 600px) {
+      flex: 1 1 calc(33.333% - 1px);
+    }
+
+    @container speakers-grid (min-width: 900px) {
+      flex: 1 1 calc(25% - 1px);
+    }
+  }
+
+  .speaker-card__image-wrap {
+    height: 60cqh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    @container speakers-grid (min-width: 600px) {
+      height: 70cqh;
+    }
+  }
+
+  .speaker-card__image {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+    width: 100%;
+  }
+
+  .speaker-card:hover .speaker-card__image {
+    transform: scale(1.05);
+  }
+
+  .speaker-card--wide {
+    flex: 1 1 calc(50% - 1px);
+
+    @container speakers-grid (min-width: 600px) {
+      flex: 1 1 calc(50% - 1px);
+    }
+  }
+
+  .speaker-card--tall .speaker-card__image-wrap {
+    height: 85cqh;
+  }
+
+  .speaker-card__overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(0, 0, 0, 0.4) 60%,
+      transparent 100%
+    );
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    padding: 2rem 1.25rem 1.25rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .speaker-card:hover .speaker-card__overlay {
+    opacity: 1;
+  }
+
+  .speaker-card__bio {
+    bottom: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.82rem;
+    left: 1.25rem;
+    line-height: 1.6;
+    margin: 0;
+    position: absolute;
+    right: 1.25rem;
+  }
+
+  .speaker-card__info {
+    background-color: #141414;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .speaker-card__meta {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .speaker-card__index {
+    color: rgba(255, 255, 255, 0.2);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+
+ .speaker-card__badge.badge {
+    background-color: rgba($color-primary, 0.12); 
+    border: 1px solid rgba($color-primary, 0.25);  
+    color: $color-primary;                        
+    letter-spacing: 0.1em;                         
+    text-transform: uppercase;                    
+  }
+
+  .speaker-card__role {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+} // end @layer speakers-components
+
+  // Fuera de layers para ganar a Bootstrap
+  .speakers__title {
+    color: $color-white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 10cqw, 9rem);
+    line-height: 0.9;
+    margin-bottom: 1.25rem;
+  }
+
+  .speaker-card__name {
+    color: $color-white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.2rem, 3cqw, 1.6rem);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }

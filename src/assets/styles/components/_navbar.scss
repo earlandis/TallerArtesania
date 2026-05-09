@@ -7,7 +7,7 @@
 
 .navbar {
   background-color: transparent;
-  container-type: inline-size;  // ← necesario para container queries
+  container-type: inline-size; 
   left: 0;
   padding: 0 $spacing-hero-padding-sm;
   position: fixed;
@@ -34,13 +34,13 @@
 
 .navbar-brand {
   color: $color-white;
-  font-size: 0.75rem;          // ← móvil: más pequeño
+  font-size: 0.75rem;      
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: color 0.2s ease;
 
   @container (min-width: #{$bp-md}) {
-    font-size: 1rem;           // ← desktop: tamaño normal
+    font-size: 1rem;     
   }
 
   &:hover,
@@ -90,7 +90,7 @@
   margin: 0 (-$spacing-hero-padding-sm);
   padding: 0.5rem $spacing-hero-padding-sm 1rem;
 
-  @container (min-width: 992px) {  // ← media → container
+  @container (min-width: 992px) {
     backdrop-filter: none;
     background-color: transparent;
     margin: 0;

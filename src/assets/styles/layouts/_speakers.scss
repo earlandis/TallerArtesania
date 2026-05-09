@@ -92,7 +92,7 @@
     padding: 0 $spacing-hero-padding-sm;
   }
 
-} // end @layer speakers-base
+} 
 
 @layer speakers-components {
 
@@ -215,7 +215,7 @@
     text-transform: uppercase;
   }
 
-} // end @layer speakers-components
+} 
 
   // Fuera de layers para ganar a Bootstrap
   .speakers__title {

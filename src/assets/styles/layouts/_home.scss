@@ -142,10 +142,6 @@
   }
 }
 
-// =========================
-// POSTER BAR
-// =========================
-
 .home__poster-bar {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.08);
@@ -171,7 +167,7 @@
   text-transform: uppercase;
 
   @container (max-width: #{$bp-md}) {
-    font-size: 0.7rem;   // ← más pequeño en móvil
+    font-size: 0.7rem;  
     letter-spacing: 0.15em;
   }
 }

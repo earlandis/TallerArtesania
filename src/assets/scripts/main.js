@@ -6,7 +6,7 @@ import "bootstrap";
 document.addEventListener("DOMContentLoaded", () => {
 
   // =========================
-  // HERO ELEMENTS (HOME)
+  // HERO ELEMENTS
   // =========================
   const hero = document.querySelector(".hero");
   const title = document.querySelector("#hero-title");
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // NAVBAR (SAFE GLOBAL)
+  // NAVBAR
   // =========================
   const navbar = document.querySelector(".navbar");
 
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // SLIDE ANIMATION (HOME ONLY)
+  // SLIDE ANIMATION
   // =========================
   let isAnimating = false;
 
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // CLICK EVENT (SAFE)
+  // CLICK EVENT
   // =========================
   if (swiperWrapper) {
     swiperWrapper.addEventListener("click", (e) => {
@@ -254,7 +254,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // FREE PAGE — PARAM HANDLER
   // Rellena el select y el badge si se llega desde home con ?taller=xxx
   // =========================
   if (window.location.pathname.includes("free.html")) {
@@ -263,7 +262,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const tallerParam = params.get("taller");
 
     if (tallerParam) {
-      // id corregidos para que coincidan con el HTML actual
       const select = document.getElementById("field-taller");
       const badge  = document.getElementById("taller-badge");
 
@@ -273,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // FREE PAGE — VALIDACIÓN
+  // VALIDACIÓN
   // Bootstrap needs-validation
   // · Blur:   valida campo a campo al salir de él
   // · Submit: valida todo el form y muestra el alert de éxito

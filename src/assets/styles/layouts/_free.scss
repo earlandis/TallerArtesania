@@ -1,17 +1,9 @@
 @use "../variables" as *;
 
-// =============================================================
-// FREE PAGE — Página de inscripción a talleres
-// Metodología: BEM  |  Container queries en .free__card
-// Variables Bootstrap personalizadas via main.scss (@use … with)
-// =============================================================
-
 .free {
   background: $color-bg;
   min-height: calc(100vh - $navbar-height);
 }
-
-// ================= ALERTA =================
 
 .free__alert {
   margin-inline: auto;
@@ -19,29 +11,17 @@
   text-align: center;
 }
 
-// ================= CONTENT =================
-// En móvil: columna (comportamiento por defecto del row Bootstrap).
-// En lg: fila con header a la izquierda y card a la derecha,
-// alineados verticalmente al centro gracias a align-items-center en el HTML.
-
 .free__content {
   padding-block: $spacing-section;
 
   .row {
-    // Separación vertical entre bloques apilados en móvil
     --bs-gutter-y: #{$spacing-md};
 
-    // En lg: aumentamos el gutter horizontal entre header y card
     @media (min-width: $bp-lg) {
       --bs-gutter-x: #{$spacing-section};
     }
   }
 }
-
-// ================= HEADER =================
-// Sin text-align centrado fijo: en lg queda alineado a la izquierda
-// de forma natural dentro de su columna.
-
 .free__header {
   padding-block: $spacing-md;
 
@@ -74,11 +54,6 @@
   max-width: $spacing-description-max-width;
 }
 
-// ================= CARD — contenedor de consulta =================
-// Se establece como contexto de container query para que los
-// elementos internos adapten su layout en función del ancho de
-// la propia tarjeta, no del viewport.
-
 .free__card {
   container-name: inscription-card;
   container-type: inline-size;
@@ -93,8 +68,6 @@
   width: 100%;
 }
 
-// ================= FORM-TITLE =================
-
 .free__form-title {
   color: $color-white;
   font-family: "Bebas Neue", sans-serif;
@@ -105,8 +78,6 @@
     font-size: 1.2rem;
   }
 }
-
-// ================= FIELDS =================
 
 .free__field {
   display: flex;
@@ -120,9 +91,6 @@
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
-
-// Inputs, select y textarea — estilo "underline" sobre base Bootstrap.
-// Especificidad doble (BEM + clase Bootstrap) para no usar !important.
 
 .free__input.form-control,
 .free__select.form-select,
@@ -158,14 +126,11 @@
   outline: none;
 }
 
-// Estados de validación Bootstrap
 .free__input.is-invalid,
 .free__select.is-invalid,
 .free__textarea.is-invalid {
   border-bottom-color: var(--bs-danger);
 }
-
-// ================= BOTONES =================
 
 .free__btn {
   font-weight: $btn-font-weight;
@@ -173,7 +138,6 @@
   text-transform: uppercase;
   width: 100%;
 
-  // Modificador primario: amarillo dorado de la paleta del proyecto
   &--primary {
     background-color: $color-primary;
     border-color: $color-primary;
@@ -187,7 +151,6 @@
     }
   }
 
-  // Modificador secundario: contorno dorado suave
   &--secondary {
     border-color: $form-border;
     color: $color-primary;
@@ -200,9 +163,6 @@
     }
   }
 }
-
-// ================= CONTAINER QUERIES — layout de botones =================
-// Cuando la card supera 480 px los botones se colocan en fila.
 
 .free__actions {
   display: flex;

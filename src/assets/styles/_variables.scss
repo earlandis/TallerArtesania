@@ -19,7 +19,7 @@ $font-size-title-max: 7rem;
 // =========================
 // ESPACIADO
 // =========================
-$spacing-section: 4rem;
+$spacing-section: 8rem;
 $border-radius-card: 1.25rem;
 $spacing-hero-padding-sm: 1.5rem;
 $spacing-hero-padding-lm: 3rem;
@@ -30,7 +30,6 @@ $spacing-hero-button-top: 1rem;
 $spacing-hero-left: 2rem;
 $spacing-content-max-width: 42rem;
 $spacing-description-max-width: 34rem;
-$border-radius-card: 1.25rem;
 $navbar-height: 64px;
 
 // =========================
@@ -44,3 +43,20 @@ $bp-lg: 1024px;
 // =========================
 $font-size-card-title-min: 1.2rem;   
 $font-size-card-title-max: 1.5rem;    
+
+$form-bg: rgba(10, 10, 10, 0.85);            // fondo tarjeta oscuro con transparencia
+$form-border: rgba(244, 215, 161, 0.6);      // borde dorado suave
+$form-border-focus: #f4d7a1;                 // dorado sólido al focus
+$color-bg:#0e0e0e;
+$color-bg-soft : rgba(244, 215, 161, 0.6);
+$form-max-width: 540px;                      // ancho ideal formulario
+$spacing-sm: 0.5rem;   // pequeños gaps (botones, alertas)
+$spacing-md: 1rem;     // separación estándar entre bloques
+$radius-lg: 20px;      // cards y formularios
+$radius-pill: 999px;   // botones redondeados completos
+$shadow-strong: 0 25px 60px rgba(0, 0, 0, 0.6);   // cards principales
+$btn-font-weight: 600;
+
+$btn-padding-y: 0.85rem;
+$btn-padding-x: 1.5rem;
+$color-text-muted: rgba(255, 255, 255, 0.6);  // texto secundario

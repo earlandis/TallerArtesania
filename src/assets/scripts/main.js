@@ -254,21 +254,85 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // FREE.HTML PARAM HANDLER (SAFE)
+  // FREE PAGE — PARAM HANDLER
+  // Rellena el select y el badge si se llega desde home con ?taller=xxx
   // =========================
   if (window.location.pathname.includes("free.html")) {
 
     const params = new URLSearchParams(window.location.search);
-    const taller = params.get("taller");
+    const tallerParam = params.get("taller");
 
-    if (taller) {
-      const select = document.getElementById("taller-select");
-      const badge = document.getElementById("taller-badge");
-      const title = document.getElementById("form-title");
+    if (tallerParam) {
+      // id corregidos para que coincidan con el HTML actual
+      const select = document.getElementById("field-taller");
+      const badge  = document.getElementById("taller-badge");
 
-      if (select) select.value = taller;
-      if (badge) badge.textContent = `Inscripción: ${taller}`;
-      if (title) title.textContent = `Inscripción en ${taller}`;
+      if (select) select.value = tallerParam;
+      if (badge)  badge.textContent = `Inscripción: ${tallerParam}`;
+    }
+  }
+
+  // =========================
+  // FREE PAGE — VALIDACIÓN
+  // Bootstrap needs-validation
+  // · Blur:   valida campo a campo al salir de él
+  // · Submit: valida todo el form y muestra el alert de éxito
+  // =========================
+  const form         = document.querySelector(".free__form");
+  const successAlert = document.getElementById("success-alert");
+
+  if (form) {
+
+    const fields = form.querySelectorAll(".free__input, .free__select, .free__textarea");
+
+    // ── Blur: valida al salir del campo ──
+    fields.forEach((field) => {
+      field.addEventListener("blur", () => {
+        if (field.checkValidity()) {
+          field.classList.remove("is-invalid");
+          field.classList.add("is-valid");
+        } else {
+          field.classList.remove("is-valid");
+          field.classList.add("is-invalid");
+        }
+      });
+
+      // Input: si ya estaba en error y el usuario corrige, lo marca válido al vuelo
+      field.addEventListener("input", () => {
+        if (field.classList.contains("is-invalid") && field.checkValidity()) {
+          field.classList.remove("is-invalid");
+          field.classList.add("is-valid");
+        }
+      });
+    });
+
+    // ── Submit: valida el form completo ──
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      form.classList.add("was-validated");
+
+      if (form.checkValidity()) {
+        showSuccess();
+      } else {
+        const firstInvalid = form.querySelector(":invalid");
+        if (firstInvalid) firstInvalid.focus();
+      }
+    });
+
+    // ── Helper: muestra el alert, resetea el form ──
+    function showSuccess() {
+      if (!successAlert) return;
+
+      successAlert.classList.remove("d-none");
+      successAlert.scrollIntoView({ behavior: "smooth", block: "center" });
+
+      form.reset();
+      form.classList.remove("was-validated");
+      fields.forEach((field) => field.classList.remove("is-valid", "is-invalid"));
+
+      setTimeout(() => successAlert.classList.add("d-none"), 4000);
     }
   }
 

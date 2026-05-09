@@ -1,15 +1,27 @@
 @use "bootstrap/scss/bootstrap" with (
   $navbar-padding-y: 0,
   $navbar-brand-font-size: 1.2rem,
+  
   $btn-border-radius: 999px,
   $btn-font-size: 0.8rem,
   $btn-font-weight: 600,
   $btn-padding-y: 0.85rem,
   $btn-padding-x: 1.5rem,
+
   $badge-font-size: 0.65rem,
   $badge-border-radius: 2rem,
   $badge-padding-y: 0.2rem,
-  $badge-padding-x: 0.65rem
+  $badge-padding-x: 0.65rem,
+
+  $input-border-radius: 10px,
+  $input-padding-y: 0.75rem,
+  $input-padding-x: 1rem,
+  $input-border-color: #ddd,
+  $input-focus-border-color: #f4d7a1,
+  $input-focus-box-shadow: 0 0 0 0.2rem rgba(244, 215, 161, 0.25),
+
+  $form-select-border-radius: 10px,
+  $form-select-focus-border-color: #f4d7a1,
 );
 
 @use "variables";

@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="../assets/styles/main.scss" />
 
-  <title>Inscripción - Talleres</title>
+  <title>Inscripción — Ayuntamiento Valencia</title>
 </head>
 
-<body class="speakers-page">
+<body class="free-page">
 
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
     <div class="container-fluid">
 
@@ -37,7 +40,7 @@
           <li class="nav-item"><a class="nav-link" href="./home.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="./speakers.html">Ponentes</a></li>
           <li class="nav-item"><a class="nav-link" href="./article.html">Artículo</a></li>
-          <li class="nav-item"><a class="nav-link active" href="./free.html">Inscripción</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="./free.html">Inscripción</a></li>
         </ul>
       </div>
 
@@ -46,86 +49,104 @@
 
   <main class="free">
 
-    <!-- HEADER -->
-    <header class="free__header container py-5 text-center">
-
-      <span class="badge bg-warning text-dark mb-3" id="taller-badge">
-        Inscripción abierta
-      </span>
-
-      <h1 class="free__title">
-        Reserva tu plaza en los talleres
-      </h1>
-
-      <p class="free__subtitle">
-        Elige una experiencia artesanal o inscríbete directamente desde el programa general.
-      </p>
-
-    </header>
-
     <!-- ALERT -->
     <div class="container">
-      <div class="alert alert-success d-none" id="success-alert">
+      <div class="free__alert alert alert-success d-none" id="success-alert" role="alert">
         ¡Inscripción realizada correctamente!
       </div>
     </div>
 
-    <!-- FORM -->
-    <section class="free__content container py-4">
+    <!-- CONTENT: fila con header + card en lg, columna en móvil -->
+    <section class="free__content container" aria-labelledby="form-heading">
 
-      <div class="row g-4">
+      <div class="row align-items-center">
 
+        <!-- HEADER: ocupa toda la anchura en móvil, mitad en lg -->
+        <div class="col-12 col-lg-5">
+          <header class="free__header">
+            <span class="free__badge badge" id="taller-badge">
+              Inscripción abierta
+            </span>
+
+            <h1 class="free__title">
+              Reserva tu plaza en los talleres
+            </h1>
+
+            <p class="free__subtitle">
+              Elige una experiencia artesanal o inscríbete directamente desde el programa general.
+            </p>
+          </header>
+        </div>
+
+        <!-- CARD: ocupa toda la anchura en móvil, otra mitad en lg -->
         <div class="col-12 col-lg-7">
+          <div class="free__card">
 
-          <div class="card shadow-sm">
-            <div class="card-body">
+            <h2 class="free__form-title h4 mb-4" id="form-heading">
+              Formulario de inscripción
+            </h2>
 
-              <h2 class="h4 mb-3" id="form-title">
-                Formulario de inscripción
-              </h2>
+            <form class="free__form needs-validation" novalidate>
 
-              <form>
+              <div class="free__field mb-3">
+                <label class="free__label form-label" for="field-nombre">Nombre</label>
+                <input
+                  id="field-nombre"
+                  type="text"
+                  class="free__input form-control"
+                  required
+                  minlength="2"
+                  autocomplete="given-name"
+                >
+                <div class="invalid-feedback">Introduce un nombre válido (mín. 2 caracteres)</div>
+              </div>
 
-                <div class="mb-3">
-                  <label class="form-label">Nombre</label>
-                  <input type="text" class="form-control" placeholder="Tu nombre">
-                </div>
+              <div class="free__field mb-3">
+                <label class="free__label form-label" for="field-email">Email</label>
+                <input
+                  id="field-email"
+                  type="email"
+                  class="free__input form-control"
+                  required
+                  autocomplete="email"
+                >
+                <div class="invalid-feedback">Introduce un email válido</div>
+              </div>
 
-                <div class="mb-3">
-                  <label class="form-label">Email</label>
-                  <input type="email" class="form-control" placeholder="correo@ejemplo.com">
-                </div>
+              <div class="free__field mb-3">
+                <label class="free__label form-label" for="field-taller">Taller</label>
+                <select id="field-taller" class="free__select form-select" required>
+                  <option value="">Selecciona un taller</option>
+                  <option value="ceramica">Cerámica</option>
+                  <option value="textil">Textil</option>
+                  <option value="madera">Madera</option>
+                  <option value="forja">Forja</option>
+                  <option value="cesteria">Cestería</option>
+                </select>
+                <div class="invalid-feedback">Selecciona un taller</div>
+              </div>
 
-                <div class="mb-3">
-                  <label class="form-label">Taller</label>
-                  <select class="form-select" id="taller-select">
-                    <option value="general">Selecciona un taller</option>
-                    <option value="ceramica">Cerámica</option>
-                    <option value="textil">Textil</option>
-                    <option value="madera">Madera</option>
-                    <option value="forja">Forja</option>
-                    <option value="cesteria">Cestería</option>
-                  </select>
-                </div>
+              <div class="free__field mb-4">
+                <label class="free__label form-label" for="field-comentarios">Comentarios</label>
+                <textarea
+                  id="field-comentarios"
+                  class="free__textarea form-control"
+                  rows="4"
+                ></textarea>
+              </div>
 
-                <div class="mb-3">
-                  <label class="form-label">Comentarios</label>
-                  <textarea class="form-control" rows="4"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">
+              <div class="free__actions">
+                <button type="submit" class="free__btn free__btn--primary btn">
                   Inscribirme
                 </button>
-
-                <button type="reset" class="btn btn-outline-secondary">
+                <button type="reset" class="free__btn free__btn--secondary btn btn-outline-secondary">
                   Limpiar
                 </button>
+              </div>
 
-              </form>
+            </form>
 
-            </div>
           </div>
-
         </div>
 
       </div>
@@ -133,7 +154,6 @@
     </section>
 
   </main>
-
 
   <script type="module" src="../assets/scripts/main.js"></script>
 </body>

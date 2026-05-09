@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" type="text/css" href="../assets/styles/main.scss" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <title>UOC Boilerplate</title>
+</head>
+
+<body class="article-page">
+
+  <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="./home.html">
+        Ayuntamiento&nbsp;<span class="navbar-brand__highlight">Valencia</span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav gap-1">
+
+          <li class="nav-item">
+            <a class="nav-link" href="./home.html">Inicio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./speakers.html">Ponentes</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./article.html">
+              Artículo
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./free.html">Inscripción</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="article">
+
+    <header class="article__hero">
+
+      <div class="article__hero-content">
+
+        <div class="article__eyebrow-group">
+          <span class="article__eyebrow-line"></span>
+          <p class="article__eyebrow">Editorial 2026</p>
+        </div>
+
+        <h1 class="article__title">
+          El valor de crear con las manos
+        </h1>
+
+        <p class="article__subtitle">
+          Las jornadas exploran cómo la artesanía contemporánea conecta tradición,
+          sostenibilidad y nuevas formas de producción cultural.
+        </p>
+
+      </div>
+
+    </header>
+
+    <article class="article__content">
+
+      <figure class="article__featured-image">
+        <img
+          src="../assets/images/cesteria.jpg"
+          alt="Artesano trabajando madera"
+        >
+      </figure>
+
+      <div class="article__intro">
+        <p>
+          En una época dominada por la producción acelerada y el consumo digital,
+          la artesanía vuelve a ocupar un espacio esencial dentro del diseño contemporáneo.
+          Las jornadas de artesanía organizadas en Valencia nacen precisamente de esta necesidad:
+          recuperar los procesos lentos, materiales y humanos detrás de cada objeto.
+        </p>
+      </div>
+
+      <div class="article__body">
+
+        <p>
+          Durante tres días, diseñadores, ceramistas, tejedores y artesanos compartirán
+          experiencias alrededor de los oficios tradicionales y su adaptación a nuevos contextos
+          culturales y tecnológicos.
+        </p>
+
+        <p>
+          El programa incluye talleres abiertos, ponencias y demostraciones en directo donde el
+          público podrá observar procesos manuales de producción y participar activamente en ellos.
+        </p>
+
+        <blockquote>
+          “La artesanía no representa nostalgia: representa otra manera de pensar el tiempo,
+          los materiales y las relaciones humanas.”
+        </blockquote>
+
+        <p>
+          Más allá del objeto final, las jornadas ponen el foco en el valor cultural del proceso:
+          aprender, observar y construir desde la proximidad y el conocimiento compartido.
+        </p>
+
+        <div class="article__gallery">
+
+          <img
+            src="../assets/images/ceramica.jpg"
+            alt="Cerámica artesanal"
+          >
+
+          <img
+            src="../assets/images/cesteria.jpg"
+            alt="Trabajo artesanal"
+          >
+
+        </div>
+
+        <h2>Actividades destacadas</h2>
+
+        <ul class="article__list">
+
+          <li>Taller de cerámica tradicional</li>
+
+          <li>Demostración de técnicas textiles mediterráneas</li>
+
+          <li>Charlas sobre diseño sostenible y producción local</li>
+
+          <li>Mercado artesanal de creadores valencianos</li>
+
+        </ul>
+
+      </div>
+
+    </article>
+
+  </main>
+
+  <script type="module" src="../assets/scripts/main.js"></script>
+
+</body>
+</html>
